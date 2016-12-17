@@ -9,6 +9,9 @@ import {MapService} from "../services/map-service";
 
 export class MapComponent implements OnInit {
 
+	public location1: string = "";
+	public location2: string = "";
+
 	ngOnInit() : void {
 
 	}
