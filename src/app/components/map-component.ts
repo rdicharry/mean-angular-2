@@ -7,16 +7,33 @@ import {MapService} from "../services/map-service";
 	templateUrl: "../templates/map.html"
 })
 
-export class MapComponent implements OnInit {
+export class MapComponent  {
 
 	constructor(private mapService: MapService){}
 
 	public location1: string = "";
 	public location2: string = "";
 
-	ngOnInit() : void {
+	public distance: string = "";
+	public duration: string = "";
 
-		let data = this.mapService.getMap(this.location1, this.location2);
+	public beep: string = "";
+
+	registerBeep(){
+		this.beep = this.beep + " click";
+	}
+
+	getDrivingDistanceDuration() {
+
+		this.beep = this.beep + " click";
+
+		// data = response.json
+		let data: any = this.mapService.getMap(this.location1, this.location2);
+
+
+
+		this.distance = data.rows[0].elements[0].distance.text;
+		this.duration = data.rows[0].elements[0].duration.text;
 
 	}
 
