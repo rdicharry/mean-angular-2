@@ -5,6 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+const ROUTES = [
+   {
+		path: '',
+		component: HomeComponent
+
+}
+]
+
 @NgModule({
   declarations: [
     AppComponent
