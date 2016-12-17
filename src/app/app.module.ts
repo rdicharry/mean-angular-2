@@ -3,26 +3,23 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { MapService } from './services/map-service';
+
 import { AppComponent } from './app.component';
+import { MapComponent } from './components/map-component';
 
-const ROUTES = [
-   {
-		path: '',
-		component: HomeComponent
 
-}
-]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, MapComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

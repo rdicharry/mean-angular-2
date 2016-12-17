@@ -18,8 +18,8 @@ export class MapService{
 	getMap(origin: string, destination: string){
 		// rather than return an observable, the asynchronicity is handled by google maps apis?
 		return this.http.get(this.distanceUrl+'origins='+origin+"&destinations="+destination+"&key="+this.apiKey).map(res=>res.json());
-		return(this.http.get('')
+		/*return(this.http.get('')
 			.map(this.extractData)
-			.catch(this.handleError));
+			.catch(this.handleError));*/
 	};
 }
