@@ -1,6 +1,6 @@
 # MeanAngular2
 
-This project is a simple demo app that allows the user to imput two locations and uses the Google Maps API to find the distance and driving time between the two points.
+This project is a simple demo app that allows the user to input two locations and uses the Google Maps API to find the distance and driving time between the two points.
 
 This project was generated in part with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 
@@ -19,7 +19,7 @@ This project was adapted from this [tutorial](https://scotch.io/tutorials/mean-a
 	"key": [your API key]
 	}`
 	The key should be enabled for Google Static Maps API and Google Maps Distance Matrix API.
-	The file should be located in `/server/routes/config.json`.
+	The file should be located in `server/routes/config.json`.
 	
 4.)Run the build using the following command from the project root directory: `node_modules/angular-cli/bin/ng build`.
 
