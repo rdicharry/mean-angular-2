@@ -17,20 +17,18 @@ export class MapComponent  {
 	public distance: string = "";
 	public duration: string = "";
 
-	public beep: string = "";
+	public mapUrl: string = "";
 
-	registerBeep(){
-		this.beep = this.beep + " click";
-	}
+
 
 	getDrivingDistanceDuration() {
 
-		this.beep = this.beep + " click";
 
 		// data = response.json
 		let data: any = this.mapService.getMap(this.location1, this.location2).subscribe(data =>{
 			this.distance = data.rows[0].elements[0].distance.text;
 			this.duration = data.rows[0].elements[0].duration.text;
+			this.mapUrl = data.mapUrl;
 		});
 
 

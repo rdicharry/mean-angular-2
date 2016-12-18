@@ -7,6 +7,8 @@ const API = 'https://maps.googleapis.com/maps/api/distancematrix';
 
 const key = require('./config.json');
 
+const staticMapUrl = 'https://maps.googleapis.com/maps/api/staticmap';
+
 
 
 router.get("/", (req, res) => {
@@ -21,6 +23,7 @@ router.get('/maps', (req, res) => {
 
   axios.get(API+'/json?'+'origins='+origin+"&destinations="+destination+"&key="+key.key)
     .then(maps => {
+	  maps.data.mapUrl = staticMapUrl+"?maptype=roadmap&size=400x400&markers=color:blue%7C"+encodeURI(origin)+"&markers=color:green%7C"+encodeURI(destination)+"&key="+key.key;
       res.status(200).json(maps.data); // only querying one origin/destination pair
     })
     .catch(error => {
