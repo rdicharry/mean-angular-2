@@ -35,4 +35,4 @@ testem.log
 Thumbs.db
 
 #google maps api key
-key.ts
+config.json

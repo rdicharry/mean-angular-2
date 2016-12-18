@@ -28,12 +28,13 @@ export class MapComponent  {
 		this.beep = this.beep + " click";
 
 		// data = response.json
-		let data: any = this.mapService.getMap(this.location1, this.location2);
+		let data: any = this.mapService.getMap(this.location1, this.location2).subscribe(data =>{
+			this.distance = data.rows[0].elements[0].distance.text;
+			this.duration = data.rows[0].elements[0].duration.text;
+		});
 
 
 
-		this.distance = data.rows[0].elements[0].distance.text;
-		this.duration = data.rows[0].elements[0].duration.text;
 
 	}
 
