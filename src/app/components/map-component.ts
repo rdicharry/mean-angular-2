@@ -19,6 +19,10 @@ export class MapComponent  {
 
 	public mapUrl: string = "";
 
+	public status: string = "";
+
+	public foundOrigin = "";
+	public foundDestination = "";
 
 
 	getDrivingDistanceDuration() {
@@ -28,7 +32,10 @@ export class MapComponent  {
 		let data: any = this.mapService.getMap(this.location1, this.location2).subscribe(data =>{
 			this.distance = data.rows[0].elements[0].distance.text;
 			this.duration = data.rows[0].elements[0].duration.text;
+			this.foundOrigin = data.destination_addresses[0];
+			this.foundDestination = data.origin_addresses[0];
 			this.mapUrl = data.mapUrl;
+			this.status = data.status;
 		});
 
 
